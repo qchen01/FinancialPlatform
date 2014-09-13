@@ -1,0 +1,41 @@
+﻿@model FinancialCenter.Models.Projects
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<table class="table" style="width:900px">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Total Amount</th>
+            <th>Needed Level</th>
+            <th>Publish Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ProjectList)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NeededLevel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublishTime)
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+
